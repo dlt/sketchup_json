@@ -2,6 +2,9 @@ require "spec_helper"
 
 describe "JSON Generator" do
   
+  it "should quote new line characters" do
+    "my\ntest".to_json.should == '"my\\ntest"'
+  end
   it "should generate json from strings" do
     "text".to_json.should == '"text"'
     'nested "quotes"'.to_json.should == '"nested \"quotes\""'

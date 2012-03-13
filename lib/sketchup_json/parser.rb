@@ -12,11 +12,11 @@ module SketchUpJSON
       '"' => '"',
       '\\' => '\\',
       '/' => '/',
-      'b' => 'b',
-      'f' => '\f',
-      'n' => '\n',
-      't' => '\t',
-      'r' => '\r',
+      'b' => "\b",
+      'f' => "\f",
+      'n' => "\n",
+      't' => "\t",
+      'r' => "\r",
     }.freeze
 
     def initialize(json_string)

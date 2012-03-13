@@ -4,11 +4,23 @@ end
 
 class String
   def to_json
-    %Q["#{ self.escape_quotes }"]
+    %Q["#{ self.escape_chars }"]
   end
 
-  def escape_quotes
-    self.gsub('"', '\"')
+  def escape_chars
+    word = self.gsub('\\', '\\\\\\')
+    {
+      '"' => '\"',
+      '/' => '\/',
+      "\b" => '\b',
+      "\f" => '\f',
+      "\n" => '\n',
+      "\t" => '\t',
+      "\r" => '\r',
+    }.each_pair do |before, after|
+      word = word.gsub(before, after)
+    end
+    word
   end
 end
 
