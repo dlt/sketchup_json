@@ -2,6 +2,11 @@ require "spec_helper"
 include SketchUpJSON
 
 describe "JSON parser" do
+
+  it "should unquote quoted characters" do
+    Parser.new('"my\\ntest"').parse.should == "my\ntest"
+  end
+
   it "should parse keywords" do
     Parser.new("true").parse.should be_true
     Parser.new("false").parse.should be_false

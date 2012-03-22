@@ -1,3 +1,3 @@
-require "lib/sketchup_json/parser"
-require "lib/sketchup_json/generator"
+require "sketchup_json/parser"
+require "sketchup_json/generator"
 
